@@ -1,0 +1,13 @@
+@CHARSET "UTF-8";
+
+#cy {
+	width: 900px;
+	height: 700px;
+	border: solid black 2px;
+	position: relative;
+	float: top;
+}
+
+#tooltip {
+	position: absolute;
+}

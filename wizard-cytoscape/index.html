@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Collaboration Wizard using Cytoscape.js</title>
+	<link href="stylesheet.css" rel="stylesheet" type="text/css"/>
+	<!-- <script src='cytoscape/lib/arbor.js'></script> -->
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+	<script src='cytoscape/build/cytoscape.js'></script>
+    <script src='qtip/jquery.qtip-1.0.0-rc3.min.js'></script>
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/qtip2/2.2.0/jquery.qtip.min.css" rel="stylesheet" type="text/css"/>
+</head>
+	<p>
+	<strong>Right-click</strong> a node to add a child node to it.</br>
+	<strong>Click</strong> a node to display a tooltip that displays it's properties. Click the node again to remove the tooltip.</br>
+	<strong>Click and drag</strong> a node to move it around.
+	</p>
+	<div id='cy'>
+		<!-- <div id='popup'>
+			<form action='#' id='nodeAttr' method='post'>
+				<h2 id='popupTitle'>Node Attributes</h2>
+				
+				<h3>Type: </h1></br>
+					<input id='inGroupA' type='radio' name='Alpha'>
+					<input id='ingroupB' type='radio' name='Beta'>
+				</br>
+				<h3>Label: </h1><textarea id='inLabel' type='text'></textarea>
+				</br>
+				<h3>Description: </h1> <input id='inDesc' type='text'>
+				</br>
+			</form>
+		</div> -->
+		<div id='tooltip'></div>
+	</div>
+	<script src='cyto-script.js'></script>
+</body>
+</html>
