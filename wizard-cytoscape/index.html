@@ -5,32 +5,49 @@
 	<title>Collaboration Wizard using Cytoscape.js</title>
 	<link href="stylesheet.css" rel="stylesheet" type="text/css"/>
 	<!-- <script src='cytoscape/lib/arbor.js'></script> -->
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+	<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
+	<script type='text/javascript' src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+	<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/ui-darkness/jquery-ui.css" rel="stylesheet">
 	<script src='cytoscape/build/cytoscape.js'></script>
-    <script src='qtip/jquery.qtip-1.0.0-rc3.min.js'></script>
-    <link href="http://cdnjs.cloudflare.com/ajax/libs/qtip2/2.2.0/jquery.qtip.min.css" rel="stylesheet" type="text/css"/>
+    <script src='qtip2/jquery.qtip.min.js'></script>
+    <link href='qtip2/jquery.qtip.min.css' rel="stylesheet" type="text/css"/> 
 </head>
 	<p>
-	<strong>Right-click</strong> a node to add a child node to it.</br>
-	<strong>Click</strong> a node to display a tooltip that displays it's properties. Click the node again to remove the tooltip.</br>
-	<strong>Click and drag</strong> a node to move it around.
+		<strong>Click and drag</strong> a node to move it around.</br>
+		<strong>Right-click</strong> a node to add a child node to it.</br>
+		<strong>Shift-click</strong> a node to edit it's label and change what type of node it is.</br>
+		<strong>Shift-click</strong> an edge to add a label or change it's existing label.</br>
+		<strong>Click</strong> a node to display a tooltip that displays it's properties. Click the node again to remove the tooltip.</br>
 	</p>
-	<div id='cy'>
-		<!-- <div id='popup'>
-			<form action='#' id='nodeAttr' method='post'>
-				<h2 id='popupTitle'>Node Attributes</h2>
-				
-				<h3>Type: </h1></br>
-					<input id='inGroupA' type='radio' name='Alpha'>
-					<input id='ingroupB' type='radio' name='Beta'>
-				</br>
-				<h3>Label: </h1><textarea id='inLabel' type='text'></textarea>
-				</br>
-				<h3>Description: </h1> <input id='inDesc' type='text'>
-				</br>
-			</form>
-		</div> -->
+	<div id='cy' style='overflow:hidden;'>
 		<div id='tooltip'></div>
+	</div>
+	<div id='dialog'>
+		<p id='dialog-title'>Title</p>
+		<form action='' method='post'>
+			<fieldset>
+				<label id='dialog-id-label' for='dialog-id'>ID:</label>
+				<label id='dialog-id'></label>
+				</br></br>
+				<label for='dialog-name'>Name:</label>
+				<input id='dialog-name' type='text' value=''>
+				</br></br>
+				<label>Type:</label></br>
+				<input id='dialog-type-collaboration' name='type' value='Collaboration' type='radio' checked>Collaboration </br>
+				<input id='dialog-type-controller' name='type' value='Controller' type='radio'>Controller </br>
+				<input id='dialog-type-database' name='type' value='Database' type='radio'>Database </br>
+				</br>
+				<label for='dialog-uri'>URI:</label>
+				</br>
+				<input id='dialog-uri' type='text' value='' size='50'>
+				</br></br>
+				<label for='dialog-description'>Description:</label>
+				</br>
+				<textarea id='dialog-description' rows='5' cols='50' value=''></textarea>
+				</br>
+				<input id='dialog-submit' type='submit'>
+			</fieldset>
+		</form>
 	</div>
 	<script src='cyto-script.js'></script>
 </body>

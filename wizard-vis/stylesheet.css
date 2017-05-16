@@ -5,4 +5,10 @@
 	height: 700px;
 	border: solid black 2px;
 	float: top;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+p {
+	text-align: center;
 }

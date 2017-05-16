@@ -6,15 +6,46 @@
 	<link href='stylesheet.css' rel='stylesheet' type='text/css'/>
 	<link href='vis/dist/vis.css' rel='stylesheet' type='text/css'/>
 	<script type='text/javascript' src='vis/dist/vis.js'></script>
+	<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
+	<script type='text/javascript' src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+	<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/ui-darkness/jquery-ui.css" rel="stylesheet">
 </head>
 <body>
 	<p>
-	<strong>Double-click</strong> the canvas to add a node.</br>
-	<strong>Double-click</strong> a node to add a child node to it.</br>
-	<strong>Click and drag</strong> a node to move it around.</br>
-	<strong>Hover over</strong> a node to show it's properties.
+		<strong>Click and drag</strong> a node to move it around.</br>
+		<strong>Double-click</strong> a node to add a child node to it.</br>
+		<strong>Shift-click</strong> a node to edit it's label and change what type of node it is.</br>
+		<strong>Shift-click</strong> an edge to add a label or change it's existing label.</br>
+		<strong>Hover over</strong> a node to display a tooltip showing it's properties.</br>
 	</p>
 	<div id='graph'></div>
+	<div id='dialog'>
+		<p id='dialog-title'>Title</p>
+		<form action='' method='post'>
+			<fieldset>
+				<label id='dialog-id-label' for='dialog-id'>ID:</label>
+				<label id='dialog-id'></label>
+				</br></br>
+				<label for='dialog-name'>Name:</label>
+				<input id='dialog-name' type='text' value=''>
+				</br></br>
+				<label>Type:</label></br>
+				<input id='dialog-type-collaboration' name='type' value='Collaboration' type='radio' checked>Collaboration </br>
+				<input id='dialog-type-controller' name='type' value='Controller' type='radio'>Controller </br>
+				<input id='dialog-type-database' name='type' value='Database' type='radio'>Database </br>
+				</br>
+				<label for='dialog-uri'>URI:</label>
+				</br>
+				<input id='dialog-uri' type='text' value='' size='50'>
+				</br></br>
+				<label for='dialog-description'>Description:</label>
+				</br>
+				<textarea id='dialog-description' rows='5' cols='50' value=''></textarea>
+				</br>
+				<input id='dialog-submit' type='submit'>
+			</fieldset>
+		</form>
+	</div>
 	<script type='text/javascript' src='vis-script.js'></script>
 </body>
 </html>
